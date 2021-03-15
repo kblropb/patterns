@@ -2,8 +2,8 @@
 
 namespace App\Command;
 
-use App\Template\State\MyObject;
-use App\Template\State\MementoKeeper;
+use App\Template\Memento\MyObject;
+use App\Template\Memento\MementoKeeper;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

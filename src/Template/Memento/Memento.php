@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Template\State;
+namespace App\Template\Memento;
 
 class Memento implements MementoInterface
 {

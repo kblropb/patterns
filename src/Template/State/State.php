@@ -40,7 +40,7 @@ class State implements StateInterface
      */
     public function getName(): string
     {
-        return $this->name ?? 'State ' . $this->getDate();
+        return $this->name ?? 'State ' . mb_strimwidth($this->state, 0, 10, '...');
     }
 
     public function getState(): string

@@ -3,6 +3,7 @@
 namespace App\Command;
 
 use App\Template\Bridge\HtmlRenderer;
+use App\Template\Bridge\JsonRenderer;
 use App\Template\Bridge\Product;
 use App\Template\Bridge\ProductPage;
 use App\Template\Bridge\SimplePage;

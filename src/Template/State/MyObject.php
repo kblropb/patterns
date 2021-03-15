@@ -16,10 +16,10 @@ class MyObject
      */
     public function save(string $name = null): StateInterface
     {
+        $this->simulatePrecess();
+
         $state = new State($this->state, $name);
         echo "Save state [{$state->getName()}], date [{$state->getDate()}] \n";
-
-        sleep(1);
 
         return $state;
     }
@@ -29,15 +29,17 @@ class MyObject
      */
     public function restore(StateInterface $state): void
     {
+        $this->simulatePrecess();
+
         echo "{$this->getName()}: Restore state [{$state->getName()}], date [{$state->getDate()}] \n";
         $this->state = $state->getState();
-        echo "{$this->getName()}: My state is [{$state->getState()}]";
+        echo "{$this->getName()}: My state is [{$state->getState()}]\n";
     }
 
     public function changeState(): void
     {
         echo "{$this->getName()}: I'm doing something important.\n";
-        $this->state = $this->generateRandomString(30);
+        $this->state = $this->generateRandomString(15);
         echo "{$this->getName()}: and my state has changed to: {$this->state}\n";
     }
 
@@ -48,16 +50,7 @@ class MyObject
      */
     private function generateRandomString(int $length = 10): string
     {
-        return substr(
-            str_shuffle(
-                str_repeat(
-                    $x = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-                    ceil($length / strlen($x))
-                )
-            ),
-            1,
-            $length
-        );
+        return substr(md5(time()), 1, $length);
     }
 
     /**
@@ -66,5 +59,16 @@ class MyObject
     private function getName(): string
     {
         return '[' . self::NAME . ']';
+    }
+
+    public function simulatePrecess(): void
+    {
+        try {
+            $sleep = random_int(0, 2);
+        } catch (\Throwable $t) {
+            $sleep = rand(0, 2);
+        }
+
+        sleep($sleep);
     }
 }

@@ -27,7 +27,7 @@ class MyObject
     /**
      * @param StateInterface $state
      */
-    public function restore(StateInterface $state)
+    public function restore(StateInterface $state): void
     {
         echo "{$this->getName()}: Restore state [{$state->getName()}], date [{$state->getDate()}] \n";
         $this->state = $state->getState();

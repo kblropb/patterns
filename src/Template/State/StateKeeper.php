@@ -30,7 +30,7 @@ class StateKeeper
         return $state;
     }
 
-    public function undo()
+    public function undo(): void
     {
         if (empty($this->states)) {
             return;

@@ -2,11 +2,11 @@
 
 namespace App\Template\State;
 
-class StateKeeper
+class MementoKeeper
 {
     /** @var MyObject */
     private $object;
-    /** @var StateInterface[] */
+    /** @var MementoInterface[] */
     private $states = [];
 
     /**
@@ -20,9 +20,9 @@ class StateKeeper
     }
 
     /**
-     * @return StateInterface
+     * @return MementoInterface
      */
-    public function backup(): StateInterface
+    public function backup(): MementoInterface
     {
         $state = $this->object->save();
         $this->states[] = $state;

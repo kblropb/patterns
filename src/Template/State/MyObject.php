@@ -12,22 +12,22 @@ class MyObject
     /**
      * @param string|null $name
      *
-     * @return StateInterface
+     * @return MementoInterface
      */
-    public function save(string $name = null): StateInterface
+    public function save(string $name = null): MementoInterface
     {
         $this->simulatePrecess();
 
-        $state = new State($this->state, $name);
+        $state = new Memento($this->state, $name);
         echo "Save state [{$state->getName()}], date [{$state->getDate()}] \n";
 
         return $state;
     }
 
     /**
-     * @param StateInterface $state
+     * @param MementoInterface $state
      */
-    public function restore(StateInterface $state): void
+    public function restore(MementoInterface $state): void
     {
         $this->simulatePrecess();
 

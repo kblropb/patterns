@@ -2,7 +2,7 @@
 
 namespace App\Template\State;
 
-interface StateInterface
+interface MementoInterface
 {
     /**
      * @param string|null $format

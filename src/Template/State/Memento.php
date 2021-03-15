@@ -2,7 +2,7 @@
 
 namespace App\Template\State;
 
-class State implements StateInterface
+class Memento implements MementoInterface
 {
 
     /** @var string */

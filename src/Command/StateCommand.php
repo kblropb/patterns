@@ -3,7 +3,7 @@
 namespace App\Command;
 
 use App\Template\State\MyObject;
-use App\Template\State\StateKeeper;
+use App\Template\State\MementoKeeper;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -24,7 +24,7 @@ class StateCommand extends Command
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $object = new MyObject();
-        $stateKeeper = new StateKeeper($object);
+        $stateKeeper = new MementoKeeper($object);
 
         $object->changeState();
         $state1 = $stateKeeper->backup();

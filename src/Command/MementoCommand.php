@@ -8,12 +8,12 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class StateCommand extends Command
+class MementoCommand extends Command
 {
     /**
      * @var string
      */
-    protected static $defaultName = 'pattern:state';
+    protected static $defaultName = 'pattern:memento';
 
     /**
      * @param InputInterface $input

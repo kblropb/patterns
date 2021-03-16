@@ -19,6 +19,9 @@ class ProductPage extends AbstractPage
         $this->product = $product;
     }
 
+    /**
+     * @return string
+     */
     public function view(): string
     {
         return $this->renderer->renderParts(

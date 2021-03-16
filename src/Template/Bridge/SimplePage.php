@@ -26,6 +26,9 @@ class SimplePage extends AbstractPage
         $this->content = $content;
     }
 
+    /**
+     * @return string
+     */
     public function view(): string
     {
         return $this->renderer->renderParts(
